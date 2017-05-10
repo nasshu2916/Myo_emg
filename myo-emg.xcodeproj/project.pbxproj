@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		688CCCE61EC2D0FA005A666D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 688CCCE51EC2D0FA005A666D /* main.cpp */; };
+		688CCCED1EC2D294005A666D /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688CCCEC1EC2D294005A666D /* myo.framework */; };
+		688CCCEF1EC2D311005A666D /* myo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 688CCCEC1EC2D294005A666D /* myo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		688CCCE01EC2D0FA005A666D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				688CCCEF1EC2D311005A666D /* myo.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		688CCCE21EC2D0FA005A666D /* myo-emg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "myo-emg"; sourceTree = BUILT_PRODUCTS_DIR; };
 		688CCCE51EC2D0FA005A666D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		688CCCEC1EC2D294005A666D /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = myo.framework; path = Freamework/myo.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				688CCCED1EC2D294005A666D /* myo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +46,7 @@
 		688CCCD91EC2D0FA005A666D = {
 			isa = PBXGroup;
 			children = (
+				688CCCEE1EC2D2FC005A666D /* Framework */,
 				688CCCE41EC2D0FA005A666D /* myo-emg */,
 				688CCCE31EC2D0FA005A666D /* Products */,
 			);
@@ -60,6 +66,14 @@
 				688CCCE51EC2D0FA005A666D /* main.cpp */,
 			);
 			path = "myo-emg";
+			sourceTree = "<group>";
+		};
+		688CCCEE1EC2D2FC005A666D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				688CCCEC1EC2D294005A666D /* myo.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +216,12 @@
 		688CCCEA1EC2D0FA005A666D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Freamework",
+				);
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +229,12 @@
 		688CCCEB1EC2D0FA005A666D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Freamework",
+				);
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
